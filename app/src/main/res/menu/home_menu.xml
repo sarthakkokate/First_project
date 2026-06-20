@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menuhomemyprofile"
+        android:title="My Profile"
+        app:showAsAction="always"
+        android:icon="@drawable/my_profile"
+        android:iconTint="@color/white"/>
+
+    <item
+        android:id="@+id/menuhomesettings"
+        android:title="Settings"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menuhomecontactus"
+        android:title="Contact Us"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menuhomeaboutus"
+        android:title="Abouut Us"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menuhomelogout"
+        android:title="Logout"
+        app:showAsAction="always"
+        android:icon="@drawable/logout_icon"
+        android:iconTint="@color/white"/>
+
+
+
+</menu>
