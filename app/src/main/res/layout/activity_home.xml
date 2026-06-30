@@ -1,11 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerlayout">
+
+<LinearLayout
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity"
-    android:background="#FFFFFFFF">
+    android:background="#FFFFFFFF"
+    android:orientation="vertical"
+    android:weightSum="100">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <include
+        layout="@layout/toolbaractivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="85"
+        android:id="@+id/homeFramelayout"/>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="15"
+        app:itemIconTint="@color/navigationitem_color"
+        app:itemTextColor="@color/navigationitem_color"
+        android:id="@+id/homeBottonNav"
+        app:itemActiveIndicatorStyle="@null"
+        app:menu="@menu/home_button_menu"
+        app:labelVisibilityMode="labeled"
+        android:background="@color/white"
+        />
+</LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/vaibhav_navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/home_menu" />
+</androidx.drawerlayout.widget.DrawerLayout>

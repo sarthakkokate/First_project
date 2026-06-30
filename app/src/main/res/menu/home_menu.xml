@@ -11,17 +11,28 @@
     <item
         android:id="@+id/menuhomesettings"
         android:title="Settings"
-        app:showAsAction="never"/>
+        app:showAsAction="always"
+        android:icon="@drawable/menusetting_icon"
+        android:iconTint="@color/white"/>
+
 
     <item
         android:id="@+id/menuhomecontactus"
         android:title="Contact Us"
-        app:showAsAction="never"/>
+        app:showAsAction="always"
+        android:iconTint="@color/white"
+        android:icon="@drawable/menucontacts_icon"
+        />
+
 
     <item
         android:id="@+id/menuhomeaboutus"
         android:title="Abouut Us"
-        app:showAsAction="never"/>
+        app:showAsAction="always"
+        android:iconTint="@color/white"
+        android:icon="@drawable/information"
+        />
+
 
     <item
         android:id="@+id/menuhomelogout"

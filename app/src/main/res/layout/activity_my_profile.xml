@@ -1,10 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyProfileActivity">
+    tools:context=".MyProfileActivity"
+    android:background="@drawable/download"
+    android:orientation="vertical">
+<ImageView
+    android:layout_width="250dp"
+    android:layout_height="150dp"
+    android:layout_gravity="center"
+    android:src="@drawable/my_profile_text_message_removebg"
+    android:layout_marginTop="50dp"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="130dp"
+            android:layout_height="132dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bgremovedprofileimage" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/galary_icon"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"></ImageView>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp"
+        android:layout_marginTop="30dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:id="@+id/etregistername"
+                android:layout_marginTop="25dp"
+                android:drawableLeft="@drawable/person_icon"
+                android:drawablePadding="10dp"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:text="Sarthak Ananta Kokate "
+                 />
+            <TextView
+                android:id="@+id/etregisterusername"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:drawableLeft="@drawable/usericon"
+                android:drawablePadding="10dp"
+                android:text="Sarthak Kokate"
+
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="#666666" />
+            <TextView
+                android:id="@+id/etregisteremail"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:drawableLeft="@drawable/email_icon"
+                android:drawablePadding="10dp"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:text="sarthakkokate@8055gmail.com"
+                 />
+            <TextView
+                android:id="@+id/etregisterphone"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:drawableLeft="@drawable/phone_icon"
+                android:drawablePadding="10dp"
+               android:text="8975680181"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnsetprofile"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_marginTop="300dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#A9A9A9"
+
+                android:fontFamily="sans-serif"
+                android:text="Edit Profile"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/chonburi"
+        android:gravity="center"
+        android:text=" Thank You 🙏"
+        android:textColor="#C471F5
+"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+
+
+</LinearLayout>

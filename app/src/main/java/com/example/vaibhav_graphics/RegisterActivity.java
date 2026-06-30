@@ -2,6 +2,7 @@ package com.example.vaibhav_graphics;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -16,7 +17,9 @@ import android.window.SplashScreen;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -27,6 +30,13 @@ public class RegisterActivity extends AppCompatActivity {
     CheckBox cbshowhidepass;
     Button btn_register;
     TextView tvregister_login;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+        AppCompatDelegate.setDefaultNightMode(
+                AppCompatDelegate.MODE_NIGHT_NO);
+        super.onCreate(savedInstanceState, persistentState);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

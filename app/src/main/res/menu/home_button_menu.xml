@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/bottomMenuHomeHome"
+        android:title="Home"
+        app:showAsAction="always"
+        android:icon="@drawable/edgucation_icon"
+        />
+    <item
+        android:id="@+id/bottomMenuHomeContent"
+        android:title="Content"
+        app:showAsAction="always"
+        android:icon="@drawable/content1"/>
+    <item
+        android:id="@+id/bottomMenuHomeMyOrder"
+        android:title="My_Order"
+        app:showAsAction="always"
+        android:icon="@drawable/my_order_icon"/>
+    <item
+        android:id="@+id/bottumHomemylocation"
+        android:title="Shop_Location"
+        app:showAsAction="always"
+        android:icon="@drawable/mylocation_icon" />
+    <item
+        android:id="@+id/bottomMenuHomemusic"
+        android:title="Music"
+        app:showAsAction="always"
+        android:icon="@drawable/musicicon" />
+
+</menu>

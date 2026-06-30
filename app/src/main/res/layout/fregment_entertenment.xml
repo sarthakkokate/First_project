@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/entertainmentFregment"
+    android:padding="16sp" >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+   <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Song Name:-"
+        android:textStyle="bold"
+        android:fontFamily="@font/agbalumo"
+        android:textSize="20sp"
+       android:id="@+id/tvEntertainmentSongName" />
+
+
+       <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Your_song"
+           android:text="Hamare Sath Shri Raghunath "
+           android:fontFamily="@font/agbalumo"
+           android:textSize="20sp"
+
+           />
+   </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/ivEntertenmentsongcoverpage"
+        android:src="@drawable/hamresath"
+        android:scaleType="fitXY"
+        android:layout_marginTop="16sp"
+        android:layout_marginBottom="16sp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20sp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/tvEntertenmentsongstarttime"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.50"
+            android:fontFamily="@font/abril_fatface"
+            android:text="Start Time"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            android:textStyle="normal" />
+
+        <SeekBar
+            android:id="@+id/sbEntertenmentSongProgress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:progressTint="@color/red"
+            android:thumbTint="@color/red" />
+
+        <TextView
+            android:id="@+id/tvEntertenmentsongendtime"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:layout_weight="0.50"
+            android:fontFamily="@font/abril_fatface"
+            android:text="End Time"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="379dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="5"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ibEntertenmentPreviousSong"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/previousicon" />
+
+        <ImageButton
+            android:id="@+id/ibEntertenmentBackwardSong"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/backwardicon" />
+
+        <ImageButton
+            android:id="@+id/ibEntertainmentPlay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:src="@drawable/playicon" />
+
+        <ImageButton
+            android:id="@+id/ibEnertenmentForward"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/forwardicon" />
+
+        <ImageButton
+            android:id="@+id/ibEntertenmentNext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/nexticon" />
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:id="@+id/songListLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🎵 Hamare Sath Shri Raghunath"
+                android:textSize="18sp"
+                android:padding="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🎵 Ram Siya Ram"
+                android:textSize="18sp"
+                android:padding="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🎵 Jai Shri Ram"
+                android:textSize="18sp"
+                android:padding="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🎵 Hanuman Chalisa"
+                android:textSize="18sp"
+                android:padding="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🎵 Darara"
+                android:textSize="18sp"
+                android:padding="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🎵 Har Har MAhadev"
+                android:textSize="18sp"
+                android:padding="10dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>

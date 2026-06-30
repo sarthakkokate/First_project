@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -19,8 +23,7 @@
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
-            android:exported="false"
-            android:theme="@style/ShowActionBar" />
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -52,7 +55,45 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
+            android:name=".googlemap.MyLocationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_mylocation"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".MyProfileActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDXKrtmMVOvzYhO9YDMYIdILpIThd8WW3w" />
+
+        <activity
+            android:name=".logodesignActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".WeddingcardActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".VisitingcardActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Banner_FlexActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".SocialmedieapostActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".PamplhletdesignActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".EditProfileActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bg"
+    android:background="@drawable/splashscreen_new_bg"
     android:gravity="center"
     tools:context=".MainActivity">
 
@@ -34,13 +34,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="100dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="10dp"
         android:layout_gravity="end"
         android:fontFamily="sans-serif-condensed-light"
         android:text="Your Vision, Our Design..!"
         android:textColor="#FF00FF"
         android:textSize="15sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtGreeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textColor="#3F51B5"
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="100dp"
