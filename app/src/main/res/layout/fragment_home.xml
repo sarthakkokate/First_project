@@ -10,10 +10,10 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- TOP CARD -->
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="220dp"
             android:layout_margin="16dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="6dp">
@@ -61,7 +61,6 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
-
                         android:text="* Design"
                         android:textColor="@android:color/white"
                         android:textSize="14sp"
@@ -70,7 +69,6 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
-
                         android:text="* Printing"
                         android:textColor="@android:color/white"
                         android:textSize="14sp"
@@ -79,7 +77,6 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
-
                         android:text="* Brand"
                         android:textColor="@android:color/white"
                         android:textSize="14sp"
@@ -88,7 +85,6 @@
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
-
                         android:text="All Your Creative Needs In One Place"
                         android:textColor="@android:color/white"
                         android:textSize="14sp"
@@ -97,7 +93,6 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="1dp"
-
                         android:text="For  Every Bussiness"
                         android:textColor="@android:color/white"
                         android:textSize="14sp"
@@ -108,16 +103,69 @@
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- SCROLL AREA -->
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_weight="1"
+                        android:background="#FF9800" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:fontFamily="@font/agbalumo"
+                        android:text="✨ Design Showcase ✨"
+                        android:textColor="#1A237E"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_weight="1"
+                        android:background="#FF9800" />
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    app:cardCornerRadius="22dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardBackgroundColor="@android:color/white"
+                    android:layout_marginTop="0dp">
+
+                    <com.denzcoskun.imageslider.ImageSlider
+                        android:id="@+id/isImagesslider"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:iss_auto_cycle="true"
+                        app:iss_delay="3000"
+                        app:iss_period="3000"
+                        app:iss_selected_dot="@drawable/default_selected_dot"
+                        app:iss_unselected_dot="@drawable/default_unselected_dot"
+                        app:iss_text_align="CENTER"
+                        app:iss_text_color="@android:color/white"/>
+
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -129,7 +177,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginBottom="10dp" />
 
-                <!-- ROW 1 -->
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -193,7 +241,7 @@
 
                 </LinearLayout>
 
-                <!-- ROW 2 -->
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -257,7 +305,7 @@
 
                 </LinearLayout>
 
-                <!-- ROW 3 -->
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

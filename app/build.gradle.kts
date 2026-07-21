@@ -50,5 +50,10 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     implementation("com.airbnb.android:lottie:6.6.7")
     implementation("com.google.android.material:material:1.12.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation ("com.github.denzcoskun:ImageSlideshow:0.1.2")
 
+    //for client server  communication
+
+    implementation("com.loopj.android:android-async-http:1.4.11")
 }

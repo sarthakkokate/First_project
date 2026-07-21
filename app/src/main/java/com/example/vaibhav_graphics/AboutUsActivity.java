@@ -1,23 +1,67 @@
 package com.example.vaibhav_graphics;
 
+import android.net.Uri;
 import android.os.Bundle;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class AboutUsActivity extends AppCompatActivity {
 
+    VideoView videoView;
+    RecyclerView recyclerVideos;
+
+    ArrayList<Integer> videoList = new ArrayList<>();
+    ArrayList<String> videoNames = new ArrayList<>();
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle savedInstanceState)
+    {
+         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
-        AppCompatDelegate.setDefaultNightMode(
-                AppCompatDelegate.MODE_NIGHT_NO);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        videoView = findViewById(R.id.ivaboutus_vedioview);
+        recyclerVideos = findViewById(R.id.recyclerVideos);
 
 
+        videoList.add(R.raw.bappa_morya);
+        videoList.add(R.raw.video2);
+        videoList.add(R.raw.video_3);
+        videoList.add(R.raw.video_4);
+
+
+        videoNames.add("Bappa Morya");
+        videoNames.add("Bappu Kisan Hai");
+        videoNames.add(" Tiranga ");
+        videoNames.add("Kon Hai Vo Kon Hai Vo");
+
+        playVideo(videoList.get(0));
+
+        recyclerVideos.setLayoutManager(new LinearLayoutManager(this));
+        VideoAdapter adapter = new VideoAdapter(videoNames, position -> {
+            playVideo(videoList.get(position));
+        });
+
+        recyclerVideos.setAdapter(adapter);
+    }
+
+    private void playVideo(int video)
+    {
+
+               Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + video);
+
+                MediaController controller = new MediaController(this);
+                controller.setAnchorView(videoView);
+
+                  videoView.setMediaController(controller);
+                   videoView.setVideoURI(uri);
+                   videoView.requestFocus();
+                   videoView.start();
     }
 }

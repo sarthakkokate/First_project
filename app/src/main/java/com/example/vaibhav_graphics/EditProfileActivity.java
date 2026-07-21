@@ -1,3 +1,7 @@
+package com.example.vaibhav_graphics;
+
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -11,11 +15,12 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 
-
+import java.time.Instant;
+import java.time.LocalDate;
 
 public class EditProfileActivity extends AppCompatActivity {
-
     ImageView imgProfile;
     Button btnChooseImage, btnSave;
     EditText etName, etPhone, etEmail, etAddress;
@@ -27,8 +32,6 @@ public class EditProfileActivity extends AppCompatActivity {
                 if (uri != null) {
                     imageUri = uri;
                     Glide.with(this).load(uri).into(imgProfile);
-
-                    // Take persistable URI permission to access it later
                     final int takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION;
                     try {
                         getContentResolver().takePersistableUriPermission(uri, takeFlags);
@@ -38,6 +41,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 }
             });
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,11 +49,11 @@ public class EditProfileActivity extends AppCompatActivity {
 
         imgProfile = findViewById(R.id.editImgProfile);
         btnChooseImage = findViewById(R.id.btnChooseImage);
-        btnSave = findViewById(R.id.btnSaveProfile);
+        btnSave = findViewById(R.id.btn_steprofile);
 
-        etName = findViewById(R.id.editName);
-        etPhone = findViewById(R.id.editPhone);
-        etEmail = findViewById(R.id.editEmail);
+        etName = findViewById(R.id.etregistername);
+        etPhone = findViewById(R.id.etregisterphone);
+        etEmail = findViewById(R.id.etregisteremail);
         etAddress = findViewById(R.id.editAddress);
 
         SharedPreferences sp = getSharedPreferences("ProfileData", MODE_PRIVATE);
@@ -63,7 +67,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
         if (!image.isEmpty()) {
             imageUri = Uri.parse(image);
-            Glide.with(this).load(imageUri).error(R.drawable.farmer).into(imgProfile);
+            Glide.with(this).load(imageUri).error(R.drawable.bgremovedprofileimage).into(imgProfile);
         }
 
         btnChooseImage.setOnClickListener(v -> {

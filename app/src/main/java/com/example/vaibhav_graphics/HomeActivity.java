@@ -125,7 +125,7 @@ public class HomeActivity extends AppCompatActivity implements
             public void onClick(DialogInterface dialog, int which)
             {
                 Intent i = new Intent(HomeActivity.this,LoginActivity2.class);
-                editor.putBoolean("isLogin",false).commit();
+                editor.putBoolean("islogin",false).commit();
                 startActivity(i);
                 finishAffinity();
             }

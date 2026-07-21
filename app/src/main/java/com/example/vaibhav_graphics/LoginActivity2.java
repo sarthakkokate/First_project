@@ -1,5 +1,5 @@
 package com.example.vaibhav_graphics;
-
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -18,7 +18,6 @@ import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,11 +25,20 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
+import com.example.vaibhav_graphics.comman_things.Urls;
 import com.google.android.material.button.MaterialButtonToggleGroup;
-
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+import org.json.JSONException;
+import org.json.JSONObject;
 import java.util.prefs.Preferences;
-
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+import org.json.JSONException;
+import org.json.JSONObject;
+import cz.msebera.android.httpclient.Header;
 public class LoginActivity2 extends AppCompatActivity {
 
     ImageView logo;
@@ -39,14 +47,10 @@ public class LoginActivity2 extends AppCompatActivity {
     EditText etLoginUsername,etLoginPassword;
     CheckBox cbLoginShowHidePassword;
     TextView tvForgotpassword;
-
-
-
+    ProgressDialog progressDialog;
     Button btnRegister;
-
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +58,6 @@ public class LoginActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_login2);
         AppCompatDelegate.setDefaultNightMode(
                 AppCompatDelegate.MODE_NIGHT_NO);
-
         logo = findViewById(R.id.logo);
         title = findViewById(R.id.tvSplashTitle);
         slogan = findViewById(R.id.tvSplashSlogan);
@@ -67,6 +70,10 @@ public class LoginActivity2 extends AppCompatActivity {
         tvForgotpassword=findViewById(R.id.tvForgotpassword);
         preferences = PreferenceManager.getDefaultSharedPreferences(LoginActivity2.this);
         editor = preferences.edit();
+        progressDialog = new ProgressDialog(LoginActivity2.this);
+        progressDialog.setMessage("Please wait...");
+        progressDialog.setCancelable(false);
+
 
         if (preferences.getBoolean("islogin", false)) {
             Intent i = new Intent(LoginActivity2.this, HomeActivity.class);
@@ -126,14 +133,16 @@ public class LoginActivity2 extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(LoginActivity2.this,"Login Successfully",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(LoginActivity2.this,"Login Successfully",Toast.LENGTH_SHORT).show();
 
-                    editor.putBoolean("islogin", true);
-                    editor.apply();
+                    //editor.putBoolean("islogin", true);
+                   // editor.apply();
 
-                    Intent i = new Intent(LoginActivity2.this, HomeActivity.class);
-                    startActivity(i);
-                    finish();
+                    //Intent i = new Intent(LoginActivity2.this, HomeActivity.class);
+                   // startActivity(i);
+                   // finish();
+
+                    loginUser();
                 }
             }
         });
@@ -156,5 +165,59 @@ public class LoginActivity2 extends AppCompatActivity {
             }
         });
     }
+
+    private void loginUser() {
+
+        progressDialog.show();
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        RequestParams params = new RequestParams();
+
+        params.put("username", etLoginUsername.getText().toString());
+        params.put("password", etLoginPassword.getText().toString());
+
+        client.post(Urls.LOGINUSER_URL, params, new JsonHttpResponseHandler() {
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                progressDialog.dismiss();
+
+                try {
+                    String status = response.getString("success");
+                    String message = response.getString("message");
+
+                    if (status.equals("1")) {
+
+                        Toast.makeText(LoginActivity2.this, message, Toast.LENGTH_SHORT).show();
+
+                        editor.putBoolean("islogin", true);
+                        editor.apply();
+
+                        SharedPreferences sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("username", etLoginUsername.getText().toString());
+                        editor.apply();
+
+                        Intent intent = new Intent(LoginActivity2.this, HomeActivity.class);
+                        startActivity(intent);
+                        finishAffinity();
+
+                    } else {
+                        Toast.makeText(LoginActivity2.this, message, Toast.LENGTH_SHORT).show();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                progressDialog.dismiss();
+                Toast.makeText(LoginActivity2.this, "Something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }
+
 
